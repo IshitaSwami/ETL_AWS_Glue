@@ -1,0 +1,6 @@
+import json
+import boto3
+glueclient = boto3.client('glue')
+def lambda_handler(event, context):
+    glueclient.start_job_run(JobName = "jobname")
+    return "Job Started"
